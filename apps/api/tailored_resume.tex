@@ -1,0 +1,235 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% ---------- CUSTOM COMMANDS ----------
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    { #1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{ #1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small\textbf{ #1} & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+% ---------- HEADING ----------
+
+\begin{center}
+    \textbf{\Huge \scshape Vallabh Wasule} \\ \vspace{1pt}
+    \small
+    
+    \href{mailto:vallabhwasule913@gmail.com}{ vallabhwasule913@gmail.com } $|$
+    \href{https://github.com/vallabh2909}{ vallabh2909 } $|$ 
+    \href{https://linkedin.com/in/vallabhwasule2909}{ vallabhwasule2909 }
+\end{center}
+
+
+% ---------- EDUCATION ----------
+
+\section{Education}
+
+\resumeSubHeadingListStart
+
+
+\resumeSubheading
+  { Vishwakarma Institute of Technology, Pune, MH }{ Oct. 2022 – June 2026 }
+  { Bachelor of Technology in Artificial Intelligence and Data Science }{  }
+
+
+\resumeSubheading
+  { Bhartiya Mahavidyalaya, Amravati, MH }{ June 2019 – June 2021 }
+  { HSC Vocational }{  }
+
+
+
+\resumeSubHeadingListEnd
+
+
+
+% ---------- EXPERIENCE ----------
+
+\section{Experience}
+
+\resumeSubHeadingListStart
+
+
+\resumeSubheading
+  { Self-employed }{ 2023 – Present }
+  { Freelance Full Stack Developer }{  }
+
+\resumeItemListStart
+
+\resumeItem{ Designed and delivered a three‑module restaurant management system using Node.js, Express, Redis and MongoDB, enabling real‑time order propagation and reducing order latency to sub‑second levels }
+
+\resumeItem{ Implemented Redis pub/sub for live order updates and MongoDB for persistent billing, achieving high availability and data consistency across customer, counter and kitchen workflows }
+
+\resumeItem{ Automated deployment with Docker and Kubernetes, supporting horizontal scaling to handle peak restaurant traffic without downtime }
+
+\resumeItemListEnd
+
+
+
+\resumeSubHeadingListEnd
+
+
+
+% ---------- PROJECTS ----------
+
+\section{Projects}
+
+\resumeSubHeadingListStart
+
+
+\resumeProjectHeading
+  {\textbf{ Codelabs } $|$ \emph{ Node.js, Express.js, Next.js, MongoDB, RabbitMQ, Redis, Docker, Kubernetes, Socket.io, Monaco Editor, Node‑Pty }}{}
+
+\resumeItemListStart
+
+\resumeItem{ Engineered a real‑time collaborative coding environment with microservices communicating via RabbitMQ and orchestrated on Kubernetes for zero‑downtime scaling }
+
+\resumeItem{ Integrated live terminal using Node‑Pty and Monaco Editor, delivering a seamless developer experience for thousands of concurrent users }
+
+\resumeItemListEnd
+
+
+\resumeProjectHeading
+  {\textbf{ Backend Express API } $|$ \emph{ Node.js, Express.js, MongoDB, Mongoose, JWT, RESTful API, JavaScript }}{}
+
+\resumeItemListStart
+
+\resumeItem{ Built a secure, role‑based API with JWT authentication, enabling fine‑grained access control for multi‑tenant applications }
+
+\resumeItem{ Applied modular architecture and comprehensive validation, reducing bug incidence and accelerating feature rollout by 30\% }
+
+\resumeItemListEnd
+
+
+\resumeProjectHeading
+  {\textbf{ Chat with PDF } $|$ \emph{ Python, Streamlit, Langchain, Google Gemini API, PyPDF2 }}{}
+
+\resumeItemListStart
+
+\resumeItem{ Created an AI‑powered PDF query tool using Langchain and Gemini, delivering accurate natural‑language answers within seconds }
+
+\resumeItem{ Deployed a Streamlit front‑end that processes up to 10 MB PDFs, automating document insight extraction for end users }
+
+\resumeItemListEnd
+
+
+\resumeProjectHeading
+  {\textbf{ Classly } $|$ \emph{ Node.js, PostgreSQL, Mux, Razorpay, Dodo Payments, Nginx, Cloudflare WAF, Docker }}{}
+
+\resumeItemListStart
+
+\resumeItem{ Developed a production‑grade LMS with stateless backend, load‑balanced behind Nginx and protected by Cloudflare WAF, supporting 5,000+ concurrent learners }
+
+\resumeItem{ Implemented idempotent payment flows and a 24‑hour webhook reconciliation cron, eliminating duplicate transactions and improving revenue capture reliability }
+
+\resumeItemListEnd
+
+
+\resumeProjectHeading
+  {\textbf{ DistriDNS } $|$ \emph{ Go, CoreDNS, etcd, HashiCorp Vault, Fedora CoreOS, Terraform }}{}
+
+\resumeItemListStart
+
+\resumeItem{ Deployed a distributed DNS service with automated PKI via Vault, achieving zero‑downtime certificate rotation across a three‑node quorum }
+
+\resumeItemListEnd
+
+
+\resumeProjectHeading
+  {\textbf{ Medis } $|$ \emph{ C++, epoll, TCP sockets, Linux systems programming }}{}
+
+\resumeItemListStart
+
+\resumeItem{ Implemented a high‑performance, non‑blocking Redis‑compatible server using epoll, processing millions of commands per second in a single thread }
+
+\resumeItemListEnd
+
+
+\resumeProjectHeading
+  {\textbf{ Restaurant Management System } $|$ \emph{ Node.js, Express.js, Redis, MongoDB }}{}
+
+\resumeItemListStart
+
+\resumeItem{ Architected a modular ordering platform that synchronizes state across UI components in real time, improving order accuracy and kitchen throughput }
+
+\resumeItemListEnd
+
+
+
+\resumeSubHeadingListEnd
+
+
+% ---------- SKILLS ----------
+
+
+\section{Technical Skills}
+
+\begin{itemize}[leftmargin=0.15in, label={}]
+\small{\item{
+
+\textbf{Languages}{: JavaScript, Python, C, C++, Java, Go, Bash} \\
+
+\textbf{Frameworks}{: Node.js, Express, React, Next.js, Flask, Django, Prisma, Sequelize, Mongoose} \\
+
+\textbf{Tools}{: Git, Docker, Kubernetes, Terraform, AWS, Nginx, Cloudflare WAF, Postman, VS Code, TravisCI, Skaffold, KIND, pgBackRest} \\
+
+\textbf{Concepts}{: SQL, NoSQL, REST APIs, JWT, Microservices, CI/CD, Distributed Systems, Networking, Data Structures and Algorithms, Operating Systems, Computer Networks, Cloud Infrastructure, Automation, Testability}
+
+}}
+\end{itemize}
+
+
+\end{document}

@@ -1,0 +1,159 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% ---------- CUSTOM COMMANDS ----------
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    { #1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{ #1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small\textbf{ #1} & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+% ---------- HEADING ----------
+
+\begin{center}
+    \textbf{\Huge \scshape {{ name | latex_escape }}} \\ \vspace{1pt}
+    \small
+    {% if phone %}{{ phone | latex_escape }} $|$ {% endif %}
+    \href{mailto:{{ email }}}{\underline{ {{ email | latex_escape }} }}
+    {% if linkedin %} $|$ \href{ {{ linkedin | url_format('linkedin') }} }{\underline{LinkedIn}}{% endif %}
+    {% if github %} $|$ \href{ {{ github | url_format('github') }} }{\underline{GitHub}}{% endif %}
+    {% if portfolio %} $|$ \href{ {{ portfolio | url_format }} }{\underline{Portfolio}}{% endif %}
+\end{center}
+
+{% if education %}
+% ---------- EDUCATION ----------
+
+\section{Education}
+
+\resumeSubHeadingListStart
+
+{% for edu in education %}
+\resumeSubheading
+  { {{ edu.school | latex_escape }} }{ {{ edu.date | latex_escape }} }
+  { {{ edu.degree | latex_escape }} }{ {% if edu.gpa %}CGPA: {{ edu.gpa | latex_escape }}{% endif %} }
+
+{% endfor %}
+
+\resumeSubHeadingListEnd
+{% endif %}
+
+{% if experience %}
+% ---------- EXPERIENCE ----------
+
+\section{Experience}
+
+\resumeSubHeadingListStart
+
+{% for exp in experience %}
+\resumeSubheading
+  { {{ exp.company | latex_escape }} }{ {{ exp.date | latex_escape }} }
+  { {{ exp.role | latex_escape }} }{ {{ exp.location | latex_escape }} }
+
+\resumeItemListStart
+{% for bullet in exp.bullets %}
+\resumeItem{ {{ bullet | latex_escape }} }
+{% endfor %}
+\resumeItemListEnd
+
+{% endfor %}
+
+\resumeSubHeadingListEnd
+{% endif %}
+
+{% if projects %}
+% ---------- PROJECTS ----------
+
+\section{Projects}
+
+\resumeSubHeadingListStart
+
+{% for project in projects %}
+\resumeProjectHeading
+  {\textbf{ {{ project.title | latex_escape }} } $|$ \emph{ {{ project.tech | latex_escape }} }}{}
+
+\resumeItemListStart
+{% for bullet in project.bullets %}
+\resumeItem{ {{ bullet | latex_escape }} }
+{% endfor %}
+\resumeItemListEnd
+
+{% endfor %}
+
+\resumeSubHeadingListEnd
+{% endif %}
+
+% ---------- SKILLS ----------
+
+{% if skills %}
+\section{Technical Skills}
+
+\begin{itemize}[leftmargin=0.15in, label={}]
+\small{\item{
+
+{% if skills.languages %}\textbf{Languages}{: {{ skills.languages | latex_escape }}} \\{% endif %}
+
+{% if skills.frameworks %}\textbf{Frameworks}{: {{ skills.frameworks | latex_escape }}} \\{% endif %}
+
+{% if skills.tools %}\textbf{Tools}{: {{ skills.tools | latex_escape }}} \\{% endif %}
+
+{% if skills.concepts %}\textbf{Concepts}{: {{ skills.concepts | latex_escape }}}{% endif %}
+
+}}
+\end{itemize}
+{% endif %}
+
+\end{document}

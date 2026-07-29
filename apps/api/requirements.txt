@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+sqlmodel
+pydantic-settings
+google-auth
+python-multipart
+groq
+tinyfish
+psycopg2-binary
+requests
+pypdf
+pymupdf
+jinja2
